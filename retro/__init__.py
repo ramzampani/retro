@@ -1,13 +1,13 @@
 import os
 import retro.data
 
-from retro._retro import Movie, RetroEmulator, core_path
+# from retro._retro import Movie, RetroEmulator, core_path
 from retro.enums import Actions, State, Observations
 from retro.retro_env import RetroEnv
 
 
 ROOT_DIR = os.path.abspath(os.path.dirname(__file__))
-core_path(os.path.join(os.path.dirname(__file__), 'cores'))
+# core_path(os.path.join(os.path.dirname(__file__), 'cores'))
 
 for path in ('VERSION.txt', '../VERSION'):
     try:
@@ -17,13 +17,13 @@ for path in ('VERSION.txt', '../VERSION'):
     except IOError:
         pass
 
-__all__ = ['Movie', 'RetroEmulator', 'Actions', 'State', 'Observations', 'get_core_path', 'get_romfile_system', 'get_system_info', 'make', 'RetroEnv']
+__all__ = ['Actions', 'State', 'Observations', 'get_romfile_system', 'get_system_info', 'make', 'RetroEnv']
 
-retro.data.init_core_info(core_path())
+# retro.data.init_core_info(core_path())
 
 
-def get_core_path(corename):
-    return os.path.join(core_path(), retro.data.EMU_CORES[corename])
+# def get_core_path(corename):
+#     return os.path.join(core_path(), retro.data.EMU_CORES[corename])
 
 
 def get_romfile_system(rom_path):
